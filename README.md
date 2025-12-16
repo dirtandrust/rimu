@@ -1,7 +1,7 @@
 
   # Rimu v2
 
-  This is a code bundle for Rimu v2. The original project is available at https://www.figma.com/design/K9OydPW03YTG0QK5r81s91/V3--Copy-.
+  This is a code bundle for Rimu v2. The original project is available at Figma Make.
 
   ## Running the code
 

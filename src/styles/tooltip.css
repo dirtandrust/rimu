@@ -1,0 +1,80 @@
+/* 
+ * Base tooltip container
+ * Controls the background, padding, and border of all tooltips
+ * Matches the inline tooltip styling used in question rationales
+ */
+.tooltip-container {
+  background-color: #111827; /* bg-gray-900 - matches question rationales */
+  color: #ffffff; /* White text */
+  border-radius: 8px; /* Rounded corners - matches rounded-lg */
+  padding: 12px; /* p-3 equivalent */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-xl */
+  z-index: 9999; /* Ensure tooltips appear above all other content */
+  font-size: 0.75rem; /* 12px - matches text-xs */
+  line-height: 1.625; /* leading-relaxed */
+}
+
+/* 
+ * Standard tooltip width
+ * Default width for most tooltips (date, skills, etc.)
+ */
+.tooltip-standard {
+  min-width: 150px; /* Minimum width to prevent cramped text */
+  max-width: 250px; /* Maximum width to keep tooltips readable */
+}
+
+/* 
+ * Wide tooltip for long content
+ * Use for notes, descriptions, and paragraph text
+ */
+.tooltip-wide {
+  min-width: 300px; /* Wider minimum for better readability */
+  max-width: 400px; /* Allow more horizontal space */
+}
+
+/* 
+ * Narrow tooltip for compact info
+ * Use for brief labels, numbers, or short text
+ */
+.tooltip-narrow {
+  min-width: 100px;
+  max-width: 180px;
+}
+
+/* 
+ * Tooltip text formatting
+ * Controls line height and word wrapping
+ */
+.tooltip-text {
+  line-height: 1.5; /* Comfortable reading spacing */
+  word-wrap: break-word; /* Prevent text overflow */
+}
+
+/* 
+ * Tooltip section divider
+ * Use to separate different sections within a tooltip
+ */
+.tooltip-divider {
+  border-top: 1px solid #404040;
+  margin: 8px 0;
+  padding-top: 8px;
+}
+
+/* 
+ * Tooltip label text
+ * Lighter gray for secondary information
+ */
+.tooltip-label {
+  color: #9ca3af; /* Gray-400 equivalent */
+  font-size: 0.75rem; /* Smaller text for labels */
+}
+
+/* 
+ * Tooltip value text
+ * White color for primary content
+ */
+.tooltip-value {
+  color: #ffffff;
+  font-size: 0.75rem;
+}

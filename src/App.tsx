@@ -5,11 +5,11 @@ import Dashboard from './components/Dashboard';
 import Sidebar from './components/Sidebar';
 import TopBar from './components/TopBar';
 import CompareView from './components/CompareView';
-import { Assessment, SavedComparison } from './types';
+import { Assessment, SavedComparison, View } from './types';
 import { mockCandidates } from './data/mockCandidates';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState<'dashboard' | 'compare'>('dashboard');
+  const [currentView, setCurrentView] = useState<View>('dashboard');
   const [assessments, setAssessments] = useState<Assessment[]>(mockCandidates);
   const [selectedForComparison, setSelectedForComparison] = useState<string[]>([]);
   const [savedComparisons, setSavedComparisons] = useState<SavedComparison[]>([]);
@@ -70,6 +70,10 @@ export default function App() {
     setSelectedForComparison([]);
   };
 
+  const handleDeleteComparison = (id: string) => {
+    setSavedComparisons(savedComparisons.filter(c => c.id !== id));
+  };
+
   const handleNewComparison = () => {
     // Navigate to comparison view
     setCurrentView('compare');
@@ -107,6 +111,7 @@ export default function App() {
         {currentView === 'compare' && (
           <CompareView
             assessments={assessments}
+            savedComparisons={savedComparisons}
             selectedForComparison={selectedForComparison}
             onToggleComparison={(id) => {
               if (selectedForComparison.includes(id)) {
@@ -116,6 +121,7 @@ export default function App() {
               }
             }}
             onSaveComparison={handleSaveComparison}
+            onDeleteComparison={handleDeleteComparison}
           />
         )}
       </div>

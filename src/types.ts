@@ -63,3 +63,12 @@ export interface LevelScore {
   threshold: number;
   met: boolean;
 }
+
+export interface SavedComparison {
+  id: string;
+  name: string;
+  assessmentIds: string[];
+  savedAt: string;
+}
+
+export type View = 'dashboard' | 'compare';

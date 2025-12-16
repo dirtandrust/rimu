@@ -1,5 +1,5 @@
 import { Home, Users, BarChart3, FileText, Settings, Zap } from 'lucide-react';
-import { View } from '../App';
+import { View } from '../types';
 import { motion } from 'motion/react';
 
 interface SidebarProps {
@@ -9,7 +9,7 @@ interface SidebarProps {
 
 const menuItems = [
   { id: 'dashboard' as View, icon: Home, label: 'Home' },
-  { id: 'comparison' as View, icon: Users, label: 'Saved Comparisons' },
+  { id: 'compare' as View, icon: Users, label: 'Saved Comparisons' },
 ];
 
 export default function Sidebar({ currentView, onViewChange }: SidebarProps) {
